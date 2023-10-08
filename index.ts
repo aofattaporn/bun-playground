@@ -1,12 +1,11 @@
-import { blog_controller } from "./controller/blog";
+// index.ts
+import Bao from "baojs";
+import { blog_controller } from "./controllers/blog";
 
-const server = Bun.serve({
-  port: 3000,
-  async fetch(req) {
-    const url = new URL(req.url);
-    const response = await blog_controller(url);
-    return response;
-  },
-});
+const app = new Bao();
 
-console.log(`Listening on http://localhost:${server.port} ...`);
+blog_controller(app);
+
+const server = app.listen();
+
+console.log(`Listening on ${server.hostname}:${server.port}`);
