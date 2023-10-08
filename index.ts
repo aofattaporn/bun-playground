@@ -1,10 +1,11 @@
+import { blog_controller } from "./controller/blog";
+
 const server = Bun.serve({
   port: 3000,
-  fetch(req) {
+  async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname === "/") return new Response("Home page!");
-    if (url.pathname === "/blog") return new Response("Blog!");
-    return new Response("404!");
+    const response = await blog_controller(url);
+    return response;
   },
 });
 
