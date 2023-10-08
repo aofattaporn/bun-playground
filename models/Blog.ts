@@ -1,6 +1,17 @@
 export type BlogType = {
+  id: number;
   title: string;
-  desc: string;
-  likes: number;
-  date: Date;
+  content: string;
+  author: string;
+  createdAt: Date;
+  updatedAt: Date;
+  tags: string[];
+  comments: CommentType[];
+};
+
+export type CommentType = {
+  id: number;
+  author: string;
+  content: string;
+  createdAt: Date;
 };

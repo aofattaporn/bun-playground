@@ -1,11 +1,12 @@
 // index.ts
 import Bao from "baojs";
-import { blog_controller } from "./controllers/blog";
+import { controllers } from "./controllers";
 
+// create instant to ceate a server
 const app = new Bao();
 
-blog_controller(app);
+// calling controller
+controllers.blog(app);
 
 const server = app.listen();
-
 console.log(`Listening on ${server.hostname}:${server.port}`);
