@@ -12,6 +12,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "baojs": "^0.2.1"
+    "baojs": "^0.2.1",
+    "mongodb": "^6.2.0",
+    "pino": "^8.16.0"
   }
 }
